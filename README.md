@@ -1,0 +1,5 @@
+
+### Secrets Management in Production
+For local development, Setu API keys are stored in a `.env` file and excluded from version control via `.gitignore`. In a production environment, these secrets would never be stored in plaintext. Instead, they would be injected at runtime using a managed secrets store such as AWS Secrets Manager, Google Cloud Secret Manager, or HashiCorp Vault. The application would retrieve them during startup, ensuring credentials are never exposed in configuration files or environment dumps. -e 
+### Secrets Management in Production
+For local development, Setu API keys are stored in a `.env` file and excluded from version control via `.gitignore`. In a production environment, these secrets would never be stored in plaintext. Instead, they would be injected at runtime using a managed secrets store such as AWS Secrets Manager, Google Cloud Secret Manager, or HashiCorp Vault. The application would retrieve them during startup, ensuring credentials are never exposed in configuration files or environment dumps.

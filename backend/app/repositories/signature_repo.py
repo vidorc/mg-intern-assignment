@@ -6,6 +6,9 @@ from app.models.signature import SignatureRequest
 class SignatureRepository:
     def __init__(self, session: AsyncSession):
         self.session = session
+    async def get_all(self, limit: int = 20) -> list:
+        result = await self.session.execute(select(SignatureRequest).order_by(SignatureRequest.created_at.desc()).limit(limit))
+        return result.scalars().all()
 
     async def create(self, document_id: str, signature_id: str, signer_url: str) -> SignatureRequest:
         req = SignatureRequest(

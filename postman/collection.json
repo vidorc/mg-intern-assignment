@@ -1,0 +1,9 @@
+{
+  "info": {"name": "MG eSign Assignment","schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"\},
+  "item": [
+    {"name": "Upload Contract","request": {"method": "POST","url": "{{base_url}}/api/upload-contract","body": {"mode": "formdata","formdata": [{"key": "file","type": "file","src": "sample_contract.pdf"}]}}},
+    {"name": "Get Signature Status","request": {"method": "GET","url": "{{base_url}}/api/signature-status/{{signature_id}}"}},
+    {"name": "Download Signed Document","request": {"method": "GET","url": "{{base_url}}/api/download/{{signature_id}}"}},
+    {"name": "List Recent Signatures","request": {"method": "GET","url": "{{base_url}}/api/signatures?limit=10"}}
+  ]
+}
